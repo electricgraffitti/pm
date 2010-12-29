@@ -1,41 +1,53 @@
-<%= form_for(@article) do |f| %>
-  <% if @article.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@article.errors.count, "error") %> prohibited this article from being saved:</h2>
-
-      <ul>
-      <% @article.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
+<%= form_for(@article, :html => {:multipart => true}) do |f| %>
+  <%= render :partial => "layouts/error_block", :locals => {:object => @article} %>
+  
+  <div class="form_section">
+    <% if @issue %>
+        <%= f.hidden_field :issue_id, :value => @issue.id %>
+    <% else %>
+      <div class="field">
+        <%= f.label :issue_id, "Select an Issue" %><br />
+        <%= f.collection_select :issue_id, Issue.all, :id, :title, {:prompt => "Select An Issue"} %>
+      </div>
+    <% end %>
+    <div class="field">
+      <%= f.label :title %><br />
+      <%= f.text_field :title %>
     </div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :title %><br />
-    <%= f.text_field :title %>
+    <div class="field">
+      <%= f.label :sub_title %><br />
+      <%= f.text_field :sub_title %>
+    </div>
+    <div class="field">
+      <%= f.label :content, "Content - This is only displayed on the Main Article in the banners." %><br />
+      <%= f.text_area :content, :cols => 52, :rows => 14 %>
+    </div>
+    <div class="field">
+      <%= f.label :article_url, "Article URL - You need to get this from Texterity App" %><br />
+      <%= f.text_field :article_url %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :featured %><br />
-    <%= f.check_box :featured %>
+  
+  <div class="form_section">
+    <div class="field">
+      <%= f.label :article_image, "Article Image (img should be 380x380)" %><br />
+      <%= f.file_field :article_image, :size => 16 %>
+    </div>
+    <div class="field">
+      <%= f.check_box :banner %>
+      <%= f.label :banner, "Banner Article - Select if this is the main article" %><br />
+    </div>
+    <div class="field">
+      <%= f.check_box :featured %>
+      <%= f.label :featured, "Featured Article - Select if this is an article in the banner section below the main article" %><br />
+    </div>
+    <div class="field">
+      <%= f.label :color_box_id, "Color Box - Select if you need it displayed in a color section" %><br />
+      <%= f.collection_select :color_box_id, ColorBox.all, :id, :color, {:prompt => "Select Color Section"} %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :banner %><br />
-    <%= f.check_box :banner %>
-  </div>
-  <div class="field">
-    <%= f.label :color_box_id %><br />
-    <%= f.text_field :color_box_id %>
-  </div>
-  <div class="field">
-    <%= f.label :article_url %><br />
-    <%= f.text_field :article_url %>
-  </div>
-  <div class="field">
-    <%= f.label :issue_id %><br />
-    <%= f.text_field :issue_id %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
+  <div class="clearfix"></div>
+  <div class="button_field">
+    <%= f.submit button_text, :class => "btn" %>
   </div>
 <% end %>

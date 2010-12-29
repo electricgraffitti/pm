@@ -1,6 +1,10 @@
 class AdminsController < ApplicationController
-  # GET /admins
-  # GET /admins.xml
+  
+  before_filter :super?, :only => [:create, :new]
+  before_filter :require_admin, :except => [:create, :new]
+  
+  layout 'admin'
+
   def index
     @admins = Admin.all
 
@@ -10,8 +14,6 @@ class AdminsController < ApplicationController
     end
   end
 
-  # GET /admins/1
-  # GET /admins/1.xml
   def show
     @admin = Admin.find(params[:id])
 
@@ -21,8 +23,6 @@ class AdminsController < ApplicationController
     end
   end
 
-  # GET /admins/new
-  # GET /admins/new.xml
   def new
     @admin = Admin.new
 
@@ -32,13 +32,10 @@ class AdminsController < ApplicationController
     end
   end
 
-  # GET /admins/1/edit
   def edit
     @admin = Admin.find(params[:id])
   end
 
-  # POST /admins
-  # POST /admins.xml
   def create
     @admin = Admin.new(params[:admin])
 
@@ -53,8 +50,6 @@ class AdminsController < ApplicationController
     end
   end
 
-  # PUT /admins/1
-  # PUT /admins/1.xml
   def update
     @admin = Admin.find(params[:id])
 
@@ -69,8 +64,6 @@ class AdminsController < ApplicationController
     end
   end
 
-  # DELETE /admins/1
-  # DELETE /admins/1.xml
   def destroy
     @admin = Admin.find(params[:id])
     @admin.destroy

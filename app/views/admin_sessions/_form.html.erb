@@ -1,0 +1,19 @@
+<h2>Admin Login</h2>
+<div class="content_wrap">
+  <%= form_for(@admin_session) do |f| %>
+  	<%= render :partial => "layouts/error_block", :locals => {:object => @admin_session} %>
+    <p>
+      <%= f.label :username %><br />
+      <%= f.text_field :username %>
+    </p
+    <p>
+      <%= f.label :password %><br />
+      <%= f.password_field :password %>
+    </p>
+    <p class="checkbox">
+      <%= f.check_box :remember_me %> <%= f.label :remember_me %>
+    </p>
+    <%= f.submit "Login", :class => "btn" %><br/>
+    <div class="clear"></div>
+  <% end %>
+</div>

@@ -1,6 +1,7 @@
 class IssuesController < ApplicationController
-  # GET /issues
-  # GET /issues.xml
+  
+  before_filter :require_admin, :except => [:index, :show]
+  
   def index
     @issues = Issue.all
 
@@ -20,6 +21,17 @@ class IssuesController < ApplicationController
       format.xml  { render :xml => @issue }
     end
   end
+  
+  def admin_issue_show
+    @issue = Issue.find(params[:id])
+    
+    @articles = @issue.articles
+    
+    respond_to do |format|
+      format.html { render :layout => "admin"}
+      format.xml  { render :xml => @issue }
+    end
+  end
 
   # GET /issues/new
   # GET /issues/new.xml
@@ -27,7 +39,7 @@ class IssuesController < ApplicationController
     @issue = Issue.new
 
     respond_to do |format|
-      format.html # new.html.erb
+      format.html { render :layout => 'admin' }
       format.xml  { render :xml => @issue }
     end
   end
@@ -35,6 +47,11 @@ class IssuesController < ApplicationController
   # GET /issues/1/edit
   def edit
     @issue = Issue.find(params[:id])
+    
+    respond_to do |format|
+      format.html { render :layout => 'admin' }
+    end
+    
   end
 
   # POST /issues
@@ -44,11 +61,10 @@ class IssuesController < ApplicationController
 
     respond_to do |format|
       if @issue.save
-        format.html { redirect_to(@issue, :notice => 'Issue was successfully created.') }
+        format.html { redirect_to(admin_issue_path(@issue), :notice => 'Issue was successfully created.') }
         format.xml  { render :xml => @issue, :status => :created, :location => @issue }
       else
         format.html { render :action => "new" }
-        format.xml  { render :xml => @issue.errors, :status => :unprocessable_entity }
       end
     end
   end
@@ -60,11 +76,10 @@ class IssuesController < ApplicationController
 
     respond_to do |format|
       if @issue.update_attributes(params[:issue])
-        format.html { redirect_to(@issue, :notice => 'Issue was successfully updated.') }
+        format.html { redirect_to(admin_issue_path(@issue), :notice => 'Issue was successfully updated.') }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
-        format.xml  { render :xml => @issue.errors, :status => :unprocessable_entity }
       end
     end
   end

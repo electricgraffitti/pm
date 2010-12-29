@@ -14,11 +14,18 @@
 class Issue < ActiveRecord::Base
   
   # Associations
+  has_many :articles
 
   # Validations
-
-  # Paperclip
-
+  validates_presence_of :title, :on => :create, :message => "can't be blank"
+  validates_uniqueness_of :title, :on => :create, :message => "must be unique"
+  
+  # PaperClip
+  has_attached_file :issue_cover,
+    :styles => { :banner => "470x320>", :small => "200x136>", :thumb => "100x68>"},
+    :url => "/issue_covers/:id/:style_:basename.:extension",
+    :path => ":rails_root/public/issue_covers/:id/:style_:basename.:extension"
+    
   # Scopes
   
 end

@@ -25,9 +25,13 @@ class ArticlesController < ApplicationController
   # GET /articles/new.xml
   def new
     @article = Article.new
-
+    
+    if params[:issue_id]
+      @issue = Issue.find(params[:issue_id])
+    end
+    
     respond_to do |format|
-      format.html # new.html.erb
+      format.html { render :layout => 'admin' }
       format.xml  { render :xml => @article }
     end
   end
@@ -35,6 +39,10 @@ class ArticlesController < ApplicationController
   # GET /articles/1/edit
   def edit
     @article = Article.find(params[:id])
+    
+    respond_to do |format|
+      format.html { render :layout => 'admin' }
+    end
   end
 
   # POST /articles
@@ -44,7 +52,7 @@ class ArticlesController < ApplicationController
 
     respond_to do |format|
       if @article.save
-        format.html { redirect_to(@article, :notice => 'Article was successfully created.') }
+        format.html { redirect_to(admin_issue_path(@article.issue), :notice => 'Article was successfully created.') }
         format.xml  { render :xml => @article, :status => :created, :location => @article }
       else
         format.html { render :action => "new" }

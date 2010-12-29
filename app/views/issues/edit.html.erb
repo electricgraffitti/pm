@@ -1,6 +1,5 @@
-<h1>Editing issue</h1>
-
-<%= render 'form' %>
-
-<%= link_to 'Show', @issue %> |
-<%= link_to 'Back', issues_path %>
+<div id="form_wrap">
+  <h2>Edit Issue</h2>
+  <%= render :partial => 'issues/form', :locals => {:button_text => "Edit Issue"} %>
+  <%= link_to 'Cancel', :back, :class => "cancel_link" %>
+</div>

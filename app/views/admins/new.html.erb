@@ -1,5 +1,5 @@
-<h1>New admin</h1>
-
-<%= render 'form' %>
-
-<%= link_to 'Back', admins_path %>
+<div id="form_wrap">
+  <h2>Setup New Admin</h2>
+  <%= render :partial => 'admins/form', :locals => {:button_text => "Create Admin"} %>
+  <%= link_to 'Cancel', :back, :class => "cancel_link" %>
+</div>

@@ -1,0 +1,19 @@
+<div class="listed_article_row">
+  <% articles.each do |a| %>
+
+    <% if a.banner %>
+      <h3>Banner Article</h3>
+      <div class="admin_banner_article">
+        <div class="image_column">
+          <%= image_tag a.article_image.url(:featured) %>
+          <%= link_to "Edit Article", edit_article_path(a) %>
+        </div>
+        <div class="content_column">
+          <h4><%= a.title %></h4>
+          <div class="red"><%= a.sub_title %></div>
+          <p><%= a.content %></p>
+        </div>
+      </div>
+      <% end %>
+  <% end %>
+</div>

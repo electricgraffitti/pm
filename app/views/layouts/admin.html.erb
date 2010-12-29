@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]> <html lang="en" class="no-js ie6"> <![endif]-->
+<!--[if IE 7 ]>    <html lang="en" class="no-js ie7"> <![endif]-->
+<!--[if IE 8 ]>    <html lang="en" class="no-js ie8"> <![endif]-->
+<!--[if IE 9 ]>    <html lang="en" class="no-js ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html lang="en" class="no-js"> <!--<![endif]-->
+<head>
+  <%= render :partial => "layouts/headmeta" %>
+</head>
+<body id="admin">
+  <!-- Application Layout -->
+  <div id="wrapper" class="clearfix">
+    <%= render :partial => 'layouts/flash', :locals => {:flash => flash} %>
+	  <header class="clearfix">
+      <%= render :partial => "layouts/header" %>
+	  </header>
+    <div id="bd" class="clearfix">
+      <div id="banner" class="clearfix">
+        <%= yield %>
+      </div>
+    </div>
+    <footer class="clearfix">
+      <%= render :partial => "layouts/footer" %>
+    </footer>
+	</div>  
+	<%= render :partial => "layouts/scripts" %>
+</body>
+</html>

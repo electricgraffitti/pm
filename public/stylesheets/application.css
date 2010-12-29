@@ -111,10 +111,10 @@ html { overflow-y: scroll; }
 a:hover, a:active { outline: none; }
 
 a, a:active {
-  color: #fff;
+  color: #444;
 }
 
-a:visited { color: #fff; }
+a:visited { color: #444; }
 a:hover { color: #7087c4; }
 
 
@@ -260,7 +260,7 @@ html, body {
    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4e4d4d', endColorstr='#1d1e1d',GradientType=0 );
 }
 a {
-  color: #000;
+  color: #444;
   text-decoration: none;
 }
 a:hover {
@@ -276,6 +276,34 @@ b {
 .hide_text {
   text-indent: -3000em;
 }
+.round {
+  -webkit-border-radius: 3px; 
+ 	-moz-border-radius: 3px;
+ 	-opera-border-radius: 3px;
+ 	border-radius: 3px;
+}
+.round2 {
+  -webkit-border-radius: 10px; 
+ 	-moz-border-radius: 10px;
+ 	-opera-border-radius: 10px;
+ 	border-radius: 10px;
+}
+.round_top {
+  -moz-border-radius-topleft: 5px;
+  -webkit-border-top-left-radius: 5px;
+  -webkit-border-top-right-radius: 5px;
+  -moz-border-radius-topright: 5px;
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
+}
+.round_top2 {
+  -moz-border-radius-topleft: 10px;
+  -webkit-border-top-left-radius: 10px;
+  -webkit-border-top-right-radius: 10px;
+  -moz-border-radius-topright: 10px;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+}
 .round_bottom {
   -moz-border-radius-bottomleft: 5px;
   -webkit-border-bottom-left-radius: 5px;
@@ -285,13 +313,13 @@ b {
   border-bottom-left-radius: 5px;
 }
 h1, h2, h3, h4, h5 {
-  color: #fff;
+  color: #444;
 }
-h1 { font-weight: bold; font-size: 24px; line-height: 36px;}
-h2 { font-weight: bold; font-size: 18px; line-height: 18px;}
-h3 { font-weight: bold; font-size: 16px; line-height: 18px; }
-h4 { font-weight: bold; font-size: 12px; line-height: 18px; }
-
+h1 { font-weight: bold; font-size: 32px; line-height: 36px;}
+h2 { font-weight: bold; font-size: 26px; line-height: 18px;}
+h3 { font-weight: bold; font-size: 18px; line-height: 18px;}
+h4 { font-weight: bold; font-size: 16px; line-height: 18px;}
+h5 { font-weight: bold; font-size: 14px; line-height: 18px;}
 .yellow {
   color: #fbb73c;
 }
@@ -310,7 +338,24 @@ h4 { font-weight: bold; font-size: 12px; line-height: 18px; }
 .brown {
   color: #926d36;
 }
-
+.content_wrap {
+  position: relative;
+  float:left;
+  margin: 20px;
+  width: 984px;
+}
+.content_row {
+  position: relative;
+  float:left;
+  width: 984px;
+  margin-bottom: 10px;
+}
+.content_column {
+  position: relative;
+  float:left;
+  padding-right: 20px;
+  margin-bottom: 10px;
+}
 /**********************************************************************************************************************************************/
 /***************************************************************************************************************** ERRORS *********************/
 #flash {
@@ -453,7 +498,7 @@ a#logo {
 #banner {
   position: relative;
   width: 1024px;
-  height: 400px;
+  min-height: 400px;
   background: #f1f1f1;
   -moz-box-shadow: 0px 5px 10px #000;
   -webkit-box-shadow: 0px 5px 10px #000;
@@ -518,26 +563,129 @@ h3.articles_header {
 .article_box.brown {
   background: #926d36;
 }
+.admin_issue_image {
+  position: relative;
+  float:left;
+  width: 210px;
+  padding-right: 20px;
+  margin-bottom: 10px;
+}
+.admin_issue_articles {
+  position: relative;
+  float:right;
+  margin-bottom: 10px;
+  width: 754px;
+}
+.admin_issue_image img {
+  position: relative;
+  background: #fff;
+  float: left;
+  padding: 3px;
+  border: 2px solid #aaa;
+  margin: 0px 0px 10px 0px;
+}
+.listed_article_row {
+  position: relative;
+  float:left;
+  margin-bottom: 10px;
+  width: 754px;
+  padding-top: 10px;
+  border-bottom: 1px solid #ccc;
+  border-top: 1px solid #aaa;
+}
+.listed_article_row h3 {
+  margin-bottom: 10px;
+}
+.admin_banner_article {
+  width: 754px;
+  float: left;
+}
+.image_column img {
+  padding: 3px;
+  border: 1px solid #aaa;
+}
+.admin_banner_article .image_column {
+  position: relative;
+  float: left;
+  width: 108px;
+  padding-right: 10px;
+}
+.admin_banner_article .content_column {
+  position: relative;
+  float: right;
+  width: 616px;
+}
 /**********************************************************************************************************************************************/
 /***************************************************************************************************************** BUTTONS ********************/
-.btn {	
-  background: url("../images/button.jpg") no-repeat scroll 0 0 transparent;
+.btn {
+  background: url("../images/orange_button.png") repeat-x scroll 0 0 transparent;
   border: medium none;
-  color: #EFEFEF;
+  color: #fff;
   cursor: pointer;
   float: left;
-  font-size: 100%;
-  height: 36px;
+  font-size: 14px;
+  height: 37px;
   margin-right: 10px;
   position: relative;
   text-decoration: none;
   text-shadow: 0 1px 1px #203303;
   width: 130px;
+  -webkit-border-radius: 7px; 
+ 	-moz-border-radius: 7px;
+ 	-opera-border-radius: 7px;
+ 	border-radius: 7px;
+ 	
+     -moz-box-shadow: 0px 1px 2px #444; 
+  -webkit-box-shadow: 0px 1px 2px #444; 
+          box-shadow: 0px 1px 2px #444;
 }
 .btn:hover {
 	color: #fff;
-	background: transparent url('../images/button.jpg') 0px -38px no-repeat;
-	text-shadow: 1px 1px 2px #92e50b;
+	background: transparent url('../images/orange_button.png') 0px -38px repeat-x;
+	text-shadow: 1px 1px 2px #333;
+}
+a.btn {
+  color: #FFFFFF;
+  display: block;
+  height: 26px;
+  padding: 11px 0 0;
+  text-align: center;
+}
+.cancel_link {
+  position: relative;
+  float: left;
+  display: block;
+  padding: 12px;
+}
+/**********************************************************************************************************************************************/
+/***************************************************************************************************************** FORMS **********************/
+.button_field {
+	float: left;
+}
+.content_wrap h2 {
+  float: left;
+  width: 100%;
+  margin-bottom: 10px;
+}
+.content_wrap .field {
+  margin-bottom: 10px;
+}
+.content_wrap select {
+  padding: 3px;
+}
+.content_wrap input[type="checkbox"] {
+  margin-bottom: 2px;
+}
+p.checkbox {
+	margin-bottom: 10px;
+}
+p.checkbox label {
+	/*margin-left: 10px;*/
+}
+.form_section {
+  position: relative;
+  float: left;
+  padding-right: 20px;
 }
 /**********************************************************************************************************************************************/
 /***************************************************************************************************************** FOOTER *********************/
@@ -560,6 +708,7 @@ footer {
 }
 .footer_nav ul li a {
   display: block;
+  margin-right: 10px;
 }
 #linkback {
   float: right;

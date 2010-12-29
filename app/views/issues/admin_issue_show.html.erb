@@ -1,0 +1,11 @@
+<div class="content_wrap">
+  <div class="admin_issue_image">
+    <%= image_tag(@issue.issue_cover.url(:small))%>
+    <div class="clear"></div>
+    <%= link_to "New Article", new_article_path(:issue_id => @issue.id), :class => "btn" %>
+  </div>
+  <div class="admin_issue_articles">
+    <h2><%= @issue.title %></h2>
+    <%= render :partial => "articles/admin_listed_articles", :locals => {:articles => @articles} %>
+  </div>
+</div>

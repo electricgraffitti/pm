@@ -19,11 +19,20 @@
 class Article < ActiveRecord::Base
   
   # Associations
-
+  belongs_to :issue
+  belongs_to :color_box
+  
   # Validations
-
-  # Paperclip
-
+  validates_presence_of :title,
+                        :article_url,
+                        :issue_id, :on => :create, :message => "can't be blank"
+                        
+  # PaperClip
+  has_attached_file :article_image,
+    :styles => { :featured => "100x100>", :featured_thumb => "85x85>", :colorbox => "154x154>"},
+    :url => "/article_images/:id/:style_:basename.:extension",
+    :path => ":rails_root/public/article_images/:id/:style_:basename.:extension"
+    
   # Scopes
   
 end

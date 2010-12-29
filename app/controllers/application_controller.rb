@@ -26,7 +26,7 @@ class ApplicationController < ActionController::Base
     end
 
     def require_no_admin
-      if current_user
+      if current_admin
         store_location
         flash[:notice] = "You must be logged out to access this page"
         redirect_to account_url
