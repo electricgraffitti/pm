@@ -1,0 +1,7 @@
+<%#= ******** JAVASCRIPTS ********** %>
+<%= javascript_include_tag 'jquery', 'jqtools', 'json2', 'scroll', :cache => true %>
+
+<%= yield :javascripts %>
+
+<%# Load in the application.js very last %>
+<%= javascript_include_tag 'application' %>

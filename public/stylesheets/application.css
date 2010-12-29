@@ -1,0 +1,649 @@
+/* 
+  HTML5 ✰ Boilerplate 
+  
+  style.css contains a reset, font normalization and some base styles.
+  
+  credit is left where credit is due.
+  much inspiration was taken from these projects:
+    yui.yahooapis.com/2.8.1/build/base/base.css
+    camendesign.com/design/
+    praegnanz.de/weblog/htmlcssjs-kickstart
+*/
+
+/* 
+  html5doctor.com Reset Stylesheet (Eric Meyer's Reset Reloaded + HTML5 baseline)
+  v1.4 2009-07-27 | Authors: Eric Meyer & Richard Clark
+  html5doctor.com/html-5-reset-stylesheet/
+*/
+
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+  margin:0;
+  padding:0;
+  border:0;
+  outline:0;
+  font-size:100%;
+  vertical-align:baseline;
+  background:transparent;
+}                  
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section { 
+  display:block;
+}
+
+nav ul { list-style:none; }
+
+blockquote, q { quotes:none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after { content:''; content:none; }
+
+a { margin:0; padding:0; font-size:100%; vertical-align:baseline; background:transparent; }
+
+ins { background-color:#ff9; color:#000; text-decoration:none; }
+
+mark { background-color:#ff9; color:#000; font-style:italic; font-weight:bold; }
+
+del { text-decoration: line-through; }
+
+abbr[title], dfn[title] { border-bottom:1px dotted; cursor:help; }
+
+/* tables still need cellspacing="0" in the markup */
+table { border-collapse:collapse; border-spacing:0; }
+
+hr { display:block; height:1px; border:0; border-top:1px solid #ccc; margin:1em 0; padding:0; }
+
+input, select { vertical-align:middle; }
+
+/* END RESET CSS */
+
+
+/* fonts.css from the YUI Library: developer.yahoo.com/yui/
+   Refer to developer.yahoo.com/yui/3/cssfonts/ for font sizing percentages
+
+  There are three custom edits:
+   * remove arial, helvetica from explicit font stack
+   * we normalize monospace styles ourselves
+   * table font-size is reset in the HTML5 reset above so there is no need to repeat
+*/
+body { font:13px/1.231 sans-serif; *font-size:small; } /* hack retained to preserve specificity */
+
+select, input, textarea, button { font:99% sans-serif; }
+
+/* normalize monospace sizing 
+ * en.wikipedia.org/wiki/MediaWiki_talk:Common.css/Archive_11#Teletype_style_fix_for_Chrome
+ */
+pre, code, kbd, samp { font-family: monospace, sans-serif; }
+ 
+
+/* 
+ * minimal base styles 
+ */
+
+
+body, select, input, textarea { 
+  /* #444 looks better than black: twitter.com/H_FJ/statuses/11800719859 */ 
+  color: #444; 
+  /* set your base font here, to apply evenly */
+  /* font-family: Georgia, serif;  */   
+}
+
+/* Headers (h1,h2,etc) have no default font-size or margin,
+   you'll want to define those yourself. */ 
+h1,h2,h3,h4,h5,h6 { font-weight: bold; }
+
+/* always force a scrollbar in non-IE */ 
+html { overflow-y: scroll; }
+
+ 
+/* Accessible focus treatment: people.opera.com/patrickl/experiments/keyboard/test */
+a:hover, a:active { outline: none; }
+
+a, a:active {
+  color: #fff;
+}
+
+a:visited { color: #fff; }
+a:hover { color: #7087c4; }
+
+
+ol { margin-left: 1.8em; }
+ol { list-style-type: decimal; }
+li { list-style: none;}
+/* Remove margins for navigation lists */
+nav ul, nav li { margin: 0; } 
+
+small { font-size: 85%; }
+strong, th { font-weight: bold; }
+
+td, td img { vertical-align: top; } 
+
+sub { vertical-align: sub; font-size: smaller; }
+sup { vertical-align: super; font-size: smaller; }
+
+pre { 
+  padding: 15px; 
+  
+  /* www.pathf.com/blogs/2008/05/formatting-quoted-code-in-blog-posts-css21-white-space-pre-wrap/ */
+  white-space: pre; /* CSS2 */
+  white-space: pre-wrap; /* CSS 2.1 */
+  white-space: pre-line; /* CSS 3 (and 2.1 as well, actually) */
+  word-wrap: break-word; /* IE */
+}
+ 
+textarea { overflow: auto; } /* thnx ivannikolic! www.sitepoint.com/blogs/2010/08/20/ie-remove-textarea-scrollbars/ */
+
+.ie6 legend, .ie7 legend { margin-left: -7px; } /* thnx ivannikolic! */
+
+/* align checkboxes, radios, text inputs with their label
+   by: Thierry Koblentz tjkdesign.com/ez-css/css/base.css  */
+input[type="radio"] { vertical-align: text-bottom; }
+input[type="checkbox"] { vertical-align: bottom; }
+.ie7 input[type="checkbox"] { vertical-align: baseline; }
+.ie6 input { vertical-align: text-bottom; }
+
+/* hand cursor on clickable input elements */
+label, input[type=button], input[type=submit], button { cursor: pointer; }
+ 
+/* webkit browsers add a 2px margin outside the chrome of form elements */  
+button, input, select, textarea { margin: 0; }
+
+/* colors for form validity */
+input:valid, textarea:valid   {  }
+input:invalid, textarea:invalid { 
+      border-radius: 1px;
+    -moz-box-shadow: 0px 0px 5px red; 
+ -webkit-box-shadow: 0px 0px 5px red; 
+         box-shadow: 0px 0px 5px red;
+}
+.no-boxshadow input:invalid, 
+.no-boxshadow textarea:invalid { background-color: #f0dddd; }
+
+
+/* These selection declarations have to be separate.
+   No text-shadow: twitter.com/miketaylr/status/12228805301 
+   Also: hot pink. */
+::-moz-selection{ background: #FF5E99; color:#fff; text-shadow: none; }
+::selection { background:#FF5E99; color:#fff; text-shadow: none; } 
+
+/*  j.mp/webkit-tap-highlight-color */
+a:link { -webkit-tap-highlight-color: #FF5E99; } 
+
+/* make buttons play nice in IE:    
+   www.viget.com/inspire/styling-the-button-element-in-internet-explorer/ */
+button {  width: auto; overflow: visible; }
+ 
+/* bicubic resizing for non-native sized IMG: 
+   code.flickr.com/blog/2008/11/12/on-ui-quality-the-little-things-client-side-image-resizing/ */
+.ie7 img { -ms-interpolation-mode: bicubic; }
+
+
+
+/* 
+ * Non-semantic helper classes 
+ */
+
+/* for image replacement */
+.ir { display: block; text-indent: -999em; overflow: hidden; background-repeat: no-repeat; text-align: left; direction: ltr; }
+
+/* Hide for both screenreaders and browsers
+   css-discuss.incutio.com/wiki/Screenreader_Visibility */
+.hidden { display: none; visibility: hidden; } 
+
+/* Hide only visually, but have it available for screenreaders 
+   www.webaim.org/techniques/css/invisiblecontent/  &  j.mp/visuallyhidden  */
+.visuallyhidden { position: absolute !important;    
+  clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+  clip: rect(1px, 1px, 1px, 1px); }
+
+/* Hide visually and from screenreaders, but maintain layout */
+.invisible { visibility: hidden; }
+
+/* >> The Magnificent CLEARFIX: Updated to prevent margin-collapsing on child elements << j.mp/bestclearfix */
+.clearfix:before, .clearfix:after {
+  content: "\0020"; display: block; height: 0; visibility: hidden;	
+} 
+
+.clearfix:after { clear: both; }
+/* Fix clearfix: blueprintcss.lighthouseapp.com/projects/15318/tickets/5-extra-margin-padding-bottom-of-page */
+.clearfix { zoom: 1; }
+
+
+html, body {
+  position: relative;
+  background: #fff;
+  /*font-family: "Helvetica Neue", Arial, Helvetica, Tahoma, sans-serif;*/
+  font-family: "HelveticaNeueLight", "HelveticaNeue-Light", "Helvetica Neue Light", "HelveticaNeue", "Helvetica Neue", 'TeXGyreHerosRegular', "Helvetica", "Myriad Pro","Tahoma", "Geneva", "Arial", sans-serif;
+  font-weight:300;
+  font-stretch:normal;
+  font-size: 12px;
+  text-rendering: optimizeLegibility;
+}
+@font-face {
+	font-family: 'LeagueGothicRegular';
+	src: url('../fonts/League_Gothic-webfont.eot');
+	src: local('☺'), url('../fonts/League_Gothic-webfont.woff') format('woff'), url('../fonts/League_Gothic-webfont.ttf') format('truetype'), url('../fonts/League_Gothic-webfont.svg#webfontpm5EArBj') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+#wrapper {
+	position: relative;
+  text-align: left;
+ 	width: 1024px;
+ 	margin: 0px auto;
+ 	background-color: #4e4d4d;
+ 	background-image: url(../images/bg.png) left bottom;
+ 	background-repeat: repeat-x;
+  background-image: -webkit-gradient(
+      linear,
+      left bottom,
+      left top,
+      color-stop(0, rgb(26,27,26)),
+      color-stop(0.65, rgb(78,77,77))
+  );
+  background-image: -moz-linear-gradient(
+      center bottom,
+      rgb(26,27,26) 0%,
+      rgb(78,77,77) 65%
+  );
+   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4e4d4d', endColorstr='#1d1e1d',GradientType=0 );
+}
+a {
+  color: #000;
+  text-decoration: none;
+}
+a:hover {
+  color: #7087c4;
+ 	text-decoration: underline;
+}
+a.link_space {
+	margin-left: 5px;
+}
+b {
+	font-weight: bold;
+}
+.hide_text {
+  text-indent: -3000em;
+}
+.round_bottom {
+  -moz-border-radius-bottomleft: 5px;
+  -webkit-border-bottom-left-radius: 5px;
+  -webkit-border-bottom-right-radius: 5px;
+  -moz-border-radius-bottomright: 5px;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+h1, h2, h3, h4, h5 {
+  color: #fff;
+}
+h1 { font-weight: bold; font-size: 24px; line-height: 36px;}
+h2 { font-weight: bold; font-size: 18px; line-height: 18px;}
+h3 { font-weight: bold; font-size: 16px; line-height: 18px; }
+h4 { font-weight: bold; font-size: 12px; line-height: 18px; }
+
+.yellow {
+  color: #fbb73c;
+}
+.green {
+  color: #a0bb5e;
+}
+.red {
+  color: #e45d4e;
+}
+.blue {
+  color: #7087c4;
+}
+.purple {
+  color: #7e4879;
+}
+.brown {
+  color: #926d36;
+}
+
+/**********************************************************************************************************************************************/
+/***************************************************************************************************************** ERRORS *********************/
+#flash {
+	display: none;
+	background:none repeat scroll 0 0 #5E9408;
+	color:#FFFFFF;
+	font-size:175%;
+	margin-top:0;
+	padding:10px;
+	position:absolute;
+	text-align:center;
+	top:0;
+	width:1024px;
+	z-index:110;
+	-webkit-box-shadow: 1px 7px 13px #000000;
+  -moz-box-shadow:1px 7px 13px #000000;
+	box-shadow: 1px 7px 13px #000000;
+}
+div.fieldWithErrors input[type="text"] {
+	border: 2px solid #CC0000;
+}
+div.fieldWithErrors label {
+	color: #CC0000;
+	font-weight: bold;
+	
+}
+#errorExplanation {
+	background-color:#F0F0F0;
+	border:2px solid red;
+	left:0;
+	margin-bottom:20px;
+	padding:7px 7px 12px;
+	position:relative;
+	top:10px;
+	width:621px;
+}
+
+#main_left #errorExplanation h2 {
+  text-align: left;
+  padding: 5px 5px 5px 15px;
+  font-size: 125%;
+  margin: -7px;
+  color: #CC0000;
+	width: 615px;
+}
+
+#errorExplanation p {
+  color: #333;
+  margin-bottom: 0;
+  padding: 5px;
+	float: left;
+}
+#errorExplanation ul	{
+	clear: both;
+}
+
+#errorExplanation ul li {
+  font-size: 12px;
+	padding-left: 10px;
+}
+/******JS Form Errors********/
+input.error, textarea.error {
+  border:2px solid #DB0404;
+  margin:0px;
+  padding:1px;
+}
+label.error {
+  background:#FFFFFF none repeat scroll 0 0;
+  color:#DB0404;
+  font-size:85%;
+  font-weight:bold;
+  margin-left:10px;
+  margin-top:2px;
+  padding:0;
+  position:absolute;
+}
+/**********************************************************************************************************************************************/
+/***************************************************************************************************************** HEADER *********************/
+header {
+  position: relative;
+	width: 100%;
+	height: 115px;
+	background-image: -webkit-gradient(
+      linear,
+      left bottom,
+      left top,
+      color-stop(0.2, rgb(29,30,29)),
+      color-stop(1, rgb(78,77,77))
+  );
+  background-image: -moz-linear-gradient(
+      center bottom,
+      rgb(29,30,29) 20%,
+      rgb(78,77,77) 100%
+  );
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4e4d4d', endColorstr='#1d1e1d',GradientType=0 );
+}
+#header_color_blocks {
+  position: relative;
+  float: left;
+  width: 1024px;
+}
+#header_color_blocks .color_block {
+  position: relative;
+  float: left;
+  width: 150px;
+  height: 20px;
+  margin-left: 24.8px;
+}
+#header_color_blocks .color_block.yellow {
+  background-color: #fbb73c;
+  margin-left: 0px;
+}
+#header_color_blocks .color_block.green {
+  background-color: #a0bb5e;
+}
+#header_color_blocks .color_block.red {
+  background-color: #e45d4e;
+}
+#header_color_blocks .color_block.blue {
+  background-color: #7087c4;
+}
+#header_color_blocks .color_block.purple {
+  background-color: #7e4879;
+}
+#header_color_blocks .color_block.brown {
+  background-color: #926d36;
+}
+a#logo {
+  position: relative;
+  float:left;
+  display: block;
+  margin-top: 15px;
+  margin-left: 50px;
+  width: 370px;
+  height: 70px;
+  background: url(../images/profiler_header_logo.png) 0px 0px no-repeat;
+}
+/**********************************************************************************************************************************************/
+/***************************************************************************************************************** BANNER *********************/
+#banner {
+  position: relative;
+  width: 1024px;
+  height: 400px;
+  background: #f1f1f1;
+  -moz-box-shadow: 0px 5px 10px #000;
+  -webkit-box-shadow: 0px 5px 10px #000;
+  box-shadow: 0px 5px 10px #000;
+}
+/**********************************************************************************************************************************************/
+/***************************************************************************************************************** MAIN CONTENT ***************/
+#bd {
+	position: relative;
+	width: 100%;
+	height: 100%;
+}
+.main_content {
+	position: relative;
+	margin: 0px auto;
+	width: 1024px;
+	min-height: 210px;
+	text-align: left;
+}
+h3.articles_header {
+  position: relative;
+  float: left;
+  margin: 20px 0px 10px 50px;
+  width:924px;
+}
+#article_boxes {
+  position: relative;
+  width: 924px;
+  margin: 0px auto;
+  height: 170px;
+}
+.article_box {
+  position: relative;
+  float: left;
+  width: 154px;
+  height: 170px;
+}
+.article_box h4 {
+  padding: 3px 10px;
+  color: #fff;
+}
+.article_box a {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+}
+.article_box.yellow {
+  background: #fbb73c;
+}
+.article_box.green {
+  background: #a0bb5e;
+}
+.article_box.red {
+  background: #e45d4e;
+}
+.article_box.blue {
+  background: #7087c4;
+}
+.article_box.purple {
+  background: #7e4879;
+}
+.article_box.brown {
+  background: #926d36;
+}
+/**********************************************************************************************************************************************/
+/***************************************************************************************************************** BUTTONS ********************/
+.btn {	
+  background: url("../images/button.jpg") no-repeat scroll 0 0 transparent;
+  border: medium none;
+  color: #EFEFEF;
+  cursor: pointer;
+  float: left;
+  font-size: 100%;
+  height: 36px;
+  margin-right: 10px;
+  position: relative;
+  text-decoration: none;
+  text-shadow: 0 1px 1px #203303;
+  width: 130px;
+}
+.btn:hover {
+	color: #fff;
+	background: transparent url('../images/button.jpg') 0px -38px no-repeat;
+	text-shadow: 1px 1px 2px #92e50b;
+}
+/**********************************************************************************************************************************************/
+/***************************************************************************************************************** FOOTER *********************/
+footer {
+	height:60px;
+	position:relative;
+	width: 100%;
+}
+.footer_nav {
+  position: relative;
+  float: left;
+  width: 350px;
+  height: 20px;
+  margin-top: 23px;
+  margin-left: 50px;
+}
+.footer_nav ul, .footer_nav ul li {
+  position: relative;
+  float: left;
+}
+.footer_nav ul li a {
+  display: block;
+}
+#linkback {
+  float: right;
+  height: 30px;
+  margin-right: 50px;
+  margin-top: 14px;
+  position: relative;
+  width: 185px;
+}
+/**********************************************************************************************************************************************/
+/***************************************************************************************************************** OVERLAYS *******************/
+/*/* overlay size and background image */ 
+div.overlay { 
+  position: relative;
+  width:780px;
+  min-height: 600px;
+  display:none; 
+  padding: 0 !important;
+}
+/* close button for overlay */ 
+div.overlay div.close { 
+  background:url("../images/modal-close.png") no-repeat scroll 0 0 transparent;
+  cursor:pointer;
+  height:36px;
+  position:absolute;
+  right: 8px;
+  top: 10px;
+  width:40px;
+  z-index:10;
+}
+div.overlay div.close:hover {
+  background:url("../images/modal-close.png") no-repeat scroll 0 -37px transparent;
+}
+.opera #header_color_blocks .color_block.brown {
+  background-color: #926d36;
+  width: 154px;
+}
+.ie #header_color_blocks .color_block.brown {
+  background-color: #926d36;
+  width: 154px;
+}
+/**********************************************************************************************************************************************/
+/***************************************************************************************************************** WEBKIT HACKS ***************/
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {	
+  #header_color_blocks .color_block.brown {
+    background-color: #926d36;
+    width: 154px;
+  }
+}
+@media all and (orientation:portrait) { 
+  /* Style adjustments for portrait mode goes here */
+
+}
+
+@media all and (orientation:landscape) { 
+  /* Style adjustments for landscape mode goes here */
+
+}
+
+/* Grade-A Mobile Browsers (Opera Mobile, iPhone Safari, Android Chrome)  
+   Consider this: www.cloudfour.com/css-media-query-for-mobile-is-fools-gold/ */
+@media screen and (max-device-width: 480px) {
+
+
+  /* Uncomment if you don't want iOS and WinMobile to mobile-optimize the text for you
+     j.mp/textsizeadjust 
+  html { -webkit-text-size-adjust:none; -ms-text-size-adjust:none; } */
+}
+
+/* 
+ * print styles
+ * inlined to avoid required HTTP connection www.phpied.com/delay-loading-your-print-css/ 
+ */
+@media print {
+  * { background: transparent !important; color: #444 !important; text-shadow: none !important; }
+  a, a:visited { color: #444 !important; text-decoration: underline; }
+  a:after { content: " (" attr(href) ")"; } 
+  abbr:after { content: " (" attr(title) ")"; }
+  .ir a:after { content: ""; }  /* Don't show links for images */
+  pre, blockquote { border: 1px solid #999; page-break-inside: avoid; }
+  thead { display: table-header-group; } /* css-discuss.incutio.com/wiki/Printing_Tables */ 
+  tr, img { page-break-inside: avoid; }
+  @page { margin: 0.5cm; }
+  p, h2, h3 { orphans: 3; widows: 3; }
+  h2, h3{ page-break-after: avoid; }
+}
