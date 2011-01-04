@@ -576,6 +576,9 @@ h3.articles_header {
   margin-bottom: 10px;
   width: 754px;
 }
+.content_wrap .admin_issue_articles h2 {
+  padding-bottom: 20px;
+}
 .admin_issue_image img {
   position: relative;
   background: #fff;
@@ -587,11 +590,10 @@ h3.articles_header {
 .listed_article_row {
   position: relative;
   float:left;
-  margin-bottom: 10px;
   width: 754px;
   padding-top: 10px;
   border-bottom: 1px solid #ccc;
-  border-top: 1px solid #aaa;
+  border-top: 1px solid #fff;
 }
 .listed_article_row h3 {
   margin-bottom: 10px;
@@ -599,6 +601,19 @@ h3.articles_header {
 .admin_banner_article {
   width: 754px;
   float: left;
+}
+.admin_issue_articles ul h3 {
+  background: none repeat scroll 0 0 #FAFAFA;
+  border-bottom: 1px solid #CCCCCC;
+  float: left;
+  padding: 5px;
+  position: relative;
+  width: 744px;
+}
+.admin_issue_articles li.listed_article_row a.edit_link {
+  position: absolute;
+  top: 5px;
+  right: 0px;
 }
 .image_column img {
   padding: 3px;
@@ -615,9 +630,55 @@ h3.articles_header {
   float: right;
   width: 616px;
 }
+.admin_content_list {
+  position: relative;
+  float: left;
+  width: 982px;
+  border: 1px solid #999;
+}
+.admin_content_list a {
+  color: #7087c4;
+}
+.issue_content.even {
+  background: #eaeaea;
+}
+.issue_content.odd {
+  background: #fefefe;
+}
+.issue_content img {
+  float: left;
+  margin-right: 20px;
+}
+.issue_content {
+  position: relative;
+  float: left;
+  width: 942px;
+  padding: 20px;
+  border-bottom: 1px solid #999;
+}
+.issue_content h3 {
+  position: relative;
+  float:right;
+  width: 822px;
+  padding: 0px 0px 10px;
+}
+.issue_content ul, .issue_content ul li  {
+  position: relative;
+  float:right;
+  width: 822px;
+}
+.issue_content ul li h4 {
+  font-size: 14px;
+}
+.issue_content ul li h5 {
+  font-size: 13px;
+}
+.issue_content ul li h6 {
+  font-size: 12px;
+}
 /**********************************************************************************************************************************************/
 /***************************************************************************************************************** BUTTONS ********************/
-.btn {
+.btn, .btn_small {
   background: url("../images/orange_button.png") repeat-x scroll 0 0 transparent;
   border: medium none;
   color: #fff;
@@ -639,7 +700,11 @@ h3.articles_header {
   -webkit-box-shadow: 0px 1px 2px #444; 
           box-shadow: 0px 1px 2px #444;
 }
-.btn:hover {
+.btn_small {
+  width: 112px;
+  height: 28px;
+}
+.btn:hover, .btn_small:hover {
 	color: #fff;
 	background: transparent url('../images/orange_button.png') 0px -38px repeat-x;
 	text-shadow: 1px 1px 2px #333;
@@ -651,11 +716,33 @@ a.btn {
   padding: 11px 0 0;
   text-align: center;
 }
+a.btn_small {
+  color: #FFFFFF;
+  display: block;
+  height: 23px;
+  padding: 6px 0 0;
+  text-align: center;
+}
 .cancel_link {
   position: relative;
   float: left;
   display: block;
   padding: 12px;
+}
+#subscribe_button {
+  color: #e5711b;
+  position: relative;
+  float: right;
+  min-width: 1px;
+  margin-right: 20px;
+  top: 41px;
+}
+#subscribe_button span {
+  display: block;
+  float: left;
+  font-size: 19px;
+  padding-right: 10px;
+  padding-top: 3px;
 }
 /**********************************************************************************************************************************************/
 /***************************************************************************************************************** FORMS **********************/
@@ -665,7 +752,7 @@ a.btn {
 .content_wrap h2 {
   float: left;
   width: 100%;
-  margin-bottom: 10px;
+  padding-bottom: 10px;
 }
 .content_wrap .field {
   margin-bottom: 10px;
@@ -686,6 +773,40 @@ p.checkbox label {
   position: relative;
   float: left;
   padding-right: 20px;
+}
+#issue_select {
+  position: relative;
+  float: left;
+  top: 45px;
+  width: 165px;
+  height: 26px;
+}
+/* setting the width and height of the SELECT element to match the replacing graphics */
+#issue_select select.custom_select {
+  position:relative;
+  z-index:10;
+  width:194px !important;
+  height:26px !important;
+  line-height:26px;
+  padding: 4px 0px 0px 4px;
+}
+
+/* dynamically created SPAN, placed below the SELECT */
+span.select {
+  background: url("../images/profiler_custom_select.png") no-repeat scroll 0 0 transparent;
+  bottom: 0;
+  color: #C3C3C3;
+  cursor: default;
+  height: 26px;
+  left: 0;
+  line-height: 26px;
+  position: absolute;
+  text-indent: 10px;
+  width: 194px;
+  z-index: 1;
+}
+span.select:hover {
+  background:url(../images/profiler_custom_select.png) no-repeat 0 -27px;
 }
 /**********************************************************************************************************************************************/
 /***************************************************************************************************************** FOOTER *********************/

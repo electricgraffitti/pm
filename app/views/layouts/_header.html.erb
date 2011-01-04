@@ -1,9 +1,6 @@
-<div id="header_color_blocks">
-  <div class="color_block yellow"></div>
-  <div class="color_block green"></div>
-  <div class="color_block red"></div>
-  <div class="color_block blue"></div>
-  <div class="color_block purple"></div>
-  <div class="color_block brown"></div>
-</div>
+<%= render :partial => 'layouts/header_color_blocks' %>
 <%= link_to raw("<h1>Profiler Magazine</h1>"), root_path, :id => 'logo', :class => "hide_text" %>
+<%= render :partial => 'issues/issue_selector' %>
+<div id="subscribe_button">
+  <span>Get Profiler Free!</span> <%= link_to "Subscribe", "http://bit.ly/fwLAV7", :class => "btn_small" %>
+</div>

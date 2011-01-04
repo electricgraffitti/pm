@@ -2,3 +2,30 @@
   <%= link_to "New Issue", new_issue_path, :class => "btn" %>
   <%= link_to "New Article", new_article_path, :class => "btn" %>
 </div>
+<div class="content_wrap">
+  <ul class="admin_content_list">
+    <% @issues.each do |issue| %>
+      <li class="issue_content <%= cycle('odd', 'even') %>">
+        <%= image_tag(issue.issue_cover.url(:thumb)) %>
+        <h3><%= issue.title %> - <%= link_to "Edit Issue", edit_issue_path(issue) %></h3>
+        <ul>
+          <% issue.banner_articles.each do |article| %>
+            <li>
+              <h4>Banner Article: <%= article.title %> - <%= link_to "Edit Article", edit_article_path(article) %></h4>
+            </li>
+          <% end %>
+          <% issue.featured_articles.each do |article| %>
+            <li>
+              <h5>Featured Article: <%= article.title %> - <%= link_to "Edit Article", edit_article_path(article) %></h5>
+            </li>
+          <% end %>
+          <% issue.standard_articles.each do |article| %>
+            <li>
+              <h6>Article: <%= article.title %> - <%= link_to "Edit Article", edit_article_path(article) %></h6>
+            </li>
+          <% end %>
+        </ul>
+      </li>
+    <% end %>
+  </ul>
+</div>

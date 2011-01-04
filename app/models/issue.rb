@@ -28,6 +28,41 @@ class Issue < ActiveRecord::Base
     
   # Scopes
   
+  # Methods
+  
+  def banner_articles
+    # iterate over an issues articles and pull out the banner articles
+    articles = []
+    self.articles.each do |a|
+      if a.banner
+        articles.push(a)
+      end
+    end
+    return articles
+  end
+  
+  def featured_articles
+    # iterate over an issues articles and pull out the banner articles
+    articles = []
+    self.articles.each do |a|
+      if a.featured
+        articles.push(a)
+      end
+    end
+    return articles
+  end
+  
+  def standard_articles
+    # iterate over an issues articles and pull out the banner articles
+    articles = []
+    self.articles.each do |a|
+      if !a.banner && !a.featured
+        articles.push(a)
+      end
+    end
+    return articles
+  end
+  
 end
 
 

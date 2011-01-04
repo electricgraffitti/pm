@@ -6,6 +6,51 @@
   </div>
   <div class="admin_issue_articles">
     <h2><%= @issue.title %></h2>
-    <%= render :partial => "articles/admin_listed_articles", :locals => {:articles => @articles} %>
+    <ul>
+      <h3>Banner Articles</h3>
+      <% @issue.banner_articles.each do |article| %>
+        <li class="listed_article_row banner">
+          <%= link_to "Edit Article", edit_article_path(article), :class => "edit_link" %>
+          <div class="admin_banner_article">
+            <div class="image_column">
+              <%= image_tag article.article_image.url(:featured) %>
+              
+            </div>
+            <div class="content_column">
+              <h4><%= article.title %></h4>
+              <div class="red"><%= article.sub_title %></div>
+              <p><%= article.content %></p>
+            </div>
+          </div>
+        </li>
+      <% end %>
+      <h3>Featured Articles</h3>
+      <% @issue.featured_articles.each do |article| %>
+        <li class="listed_article_row featured">
+          <%= link_to "Edit Article", edit_article_path(article), :class => "edit_link" %>
+          <div class="admin_banner_article">
+            <div class="image_column">
+              <%= image_tag article.article_image.url(:featured_thumb) %>
+            </div>
+            <div class="content_column">
+              <h4><%= article.title %></h4>
+              <div class="red"><%= article.sub_title %></div>
+            </div>
+          </div>
+        </li>
+      <% end %>
+      <h3>Articles</h3>
+      <% @issue.standard_articles.each do |article| %>
+        <li class="listed_article_row standard">
+          <%= link_to "Edit Article", edit_article_path(article), :class => "edit_link" %>
+          <div class="admin_banner_article">
+            <div class="content_column">
+              <h4><%= article.title %></h4>
+              <div class="red"><%= article.sub_title %></div>
+            </div>
+          </div>
+        </li>
+      <% end %>
+    </ul>
   </div>
 </div>

@@ -13,7 +13,7 @@ class AdminSessionsController < ApplicationController
     @admin_session = AdminSession.new(params[:admin_session])
     if @admin_session.save
       flash[:notice] = "Login successful!"
-      redirect_to root_path
+      redirect_to dashboard_path
     else
       render :action => :new
     end
