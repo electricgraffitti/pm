@@ -1,0 +1,17 @@
+<h2><%= ba.title %></h2>
+<div class="main_sub_title red"><%= ba.sub_title %></div>
+<p><%= ba.content %></p>
+<ul class="banner_issue_links">
+  <li><%= link_to "Read More", ba.article_url, :target => "_blank" %></li>
+  <li>
+    <div class="addthis_toolbox addthis_default_style ">
+      <%= link_to "Share Me", "http://www.addthis.com/bookmark.php?v=250&amp;username=hcinsight", :class => "addthis_button_compact" %>
+      <span class="addthis_separator">|</span>
+      <a class="addthis_button_preferred_1"></a>
+      <a class="addthis_button_preferred_2"></a>
+      <a class="addthis_button_preferred_3"></a>
+      <a class="addthis_button_preferred_4"></a>
+      <span class="addthis_separator">|</span>
+    </div>
+  </li>
+</ul>

@@ -38,21 +38,39 @@ var form = {
   
   customSelect: function() {
     if (!$.browser.opera) {
-        $('#issue_select select.custom_select').each(function(){
-            var title = $(this).attr('title');
-            if( $('option:selected', this).val() != ''  ) title = $('option:selected',this).text();
-            $(this)
-              .css({'z-index':10,'opacity':0,'-khtml-appearance':'none'})
-              .after('<span class="select">' + title + '</span>')
-              .change(function() {
-                val = $('option:selected',this).text();
-                $(this).next().text(val);
-              });
+      $('#issue_select select.custom_select').each(function() {
+        var title = $(this).attr('title');
+        if( $('option:selected', this).val() != ''  ) title = $('option:selected',this).text();
+        $(this)
+          .css({'z-index':10,'opacity':0,'-khtml-appearance':'none'})
+          .after('<span class="select">' + title + '</span>')
+          .change(function() {
+            val = $('option:selected',this).text();
+            $(this).next().text(val);
+          });
         });
+    }; 
+  }
+};
 
-    };
+var ajax = {
+  
+  indexSelectTrigger: function() {
+    var selector = $("#issue_id");
+    var banner_content = $("#banner");
+    var color_boxes = $("#article_boxes");
     
-  },
+    // selector.change(function() {
+    //   var data = $(this).val();
+    //   
+    //   banner_content.children().fadeOut();
+    //   color_boxes.children().fadeOut();
+    //   
+    //   banner_content.load('/index-banner', {id: data} );
+    //   color_boxes.load('/index-color-boxes', {id: data} );
+    //   
+    // });
+  }
   
 };
 

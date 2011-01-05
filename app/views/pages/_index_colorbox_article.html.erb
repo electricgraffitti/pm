@@ -1,0 +1,7 @@
+<div class="article_box <%= a.color_box.color %>">
+  <div class="color_box_image_wrap">
+    <%= image_tag(a.article_image.url(:colorbox), :alt => a.title) %>
+  </div>
+  <h4><%= a.title %></h4>
+  <%= link_to "View Article", article_path(a), :target => "_blank" %>
+</div>
