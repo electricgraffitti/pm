@@ -6,7 +6,7 @@
   <ul class="admin_content_list">
     <% @issues.each do |issue| %>
       <li class="issue_content <%= cycle('odd', 'even') %>">
-        <%= image_tag(issue.issue_cover.url(:thumb)) %>
+        <%= link_to(image_tag(issue.issue_cover.url(:thumb)), admin_issue_path(issue)) %>
         <h3><%= issue.title %> - <%= link_to "Edit Issue", edit_issue_path(issue) %></h3>
         <ul>
           <% issue.banner_articles.each do |article| %>

@@ -598,13 +598,17 @@ h3.articles_header {
 .listed_article_row h3 {
   margin-bottom: 10px;
 }
+.listed_article_row.featured img {
+  width: 25px;
+}
 .admin_banner_article {
   width: 754px;
   float: left;
 }
 .admin_issue_articles ul h3 {
-  background: none repeat scroll 0 0 #FAFAFA;
+  background: none repeat scroll 0 0 #EAEAEA;
   border-bottom: 1px solid #CCCCCC;
+  border-top: 1px solid #FFFFFF;
   float: left;
   padding: 5px;
   position: relative;
@@ -629,6 +633,15 @@ h3.articles_header {
   position: relative;
   float: right;
   width: 616px;
+}
+.featured .content_column, .standard .content_column {
+  float:left;
+}
+.standard .content_column {
+  margin-left: 20px;
+}
+.featured .admin_banner_article .image_column {
+  width: 40px;
 }
 .admin_content_list {
   position: relative;
@@ -666,6 +679,9 @@ h3.articles_header {
   position: relative;
   float:right;
   width: 822px;
+}
+.issue_content ul li {
+  padding-bottom: 5px;
 }
 .issue_content ul li h4 {
   font-size: 14px;
