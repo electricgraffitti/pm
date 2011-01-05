@@ -3,45 +3,66 @@
 <% end %>
 
 <% content_for :banner do %>
-  
+  <div class="issue_banner">
+    <%= image_tag(@issue.issue_cover.url(:banner)) %>
+    <div class="banner_content">
+      <div id="banner_article">
+        <% @issue.banner_articles.each do |ba| %>
+          <h2><%= ba.title %></h2>
+          <div class="main_sub_title red"><%= ba.sub_title %></div>
+          <p><%= ba.content %></p>
+          <ul class="banner_issue_links">
+            <li><%= link_to "Read More", ba.article_url, :target => "_blank" %></li>
+            <li>
+              <div class="addthis_toolbox addthis_default_style ">
+                <%= link_to "Share Me", "http://www.addthis.com/bookmark.php?v=250&amp;username=hcinsight", :class => "addthis_button_compact" %>
+                <span class="addthis_separator">|</span>
+                <a class="addthis_button_preferred_1"></a>
+                <a class="addthis_button_preferred_2"></a>
+                <a class="addthis_button_preferred_3"></a>
+                <a class="addthis_button_preferred_4"></a>
+                <span class="addthis_separator">|</span>
+              </div>
+            </li>
+          </ul>
+        <% end %>
+      </div>
+      <div id="featured_articles">
+        <% @issue.featured_articles.each do |fa| %>
+          <div class="banner_featured_article">
+            <%= image_tag(fa.article_image.url(:featured_thumb)) %>
+            <div class="red">Featured</div>
+            <h3><%= fa.title %></h3>
+            <div><%= fa.sub_title %></div>
+            <%= link_to "Read More", fa.article_url %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+    <div id="app_link">
+      <%= image_tag("profiler_banner_icon.png") %>
+      <%= link_to "Get the App", "http://phobos.apple.com/WebObjects/MZStore.woa/wa/viewSoftware?id=402192354&mt=8?partnerId=30&siteID=KEmRFwU0WKY-hI28KvRKOGwR8BIz5W8B3A", :target => "_blank" %>
+    </div>
+  </div>
 <% end %>
 
 <h3 class="articles_header red">Articles</h3>
 <div id="article_boxes" class="clearfix">
-  <div class="article_box yellow">
-    <%= image_tag('demo_article_image.png', :alt => "Demo Article Image") %>
-    <h4>Article Title</h4>
-    <%= link_to "View Article", "" %>
-  </div>
-  <div class="article_box green">
-    <%= image_tag('demo_article_image.png', :alt => "Demo Article Image") %>
-    <h4>Article Title</h4>
-    <%= link_to "View Article", "" %>
-  </div>
-  <div class="article_box red">
-    <%= image_tag('demo_article_image.png', :alt => "Demo Article Image") %>
-    <h4>Article Title</h4>
-    <%= link_to "View Article", "" %>
-  </div>
-  <div class="article_box blue">
-    <%= image_tag('demo_article_image.png', :alt => "Demo Article Image") %>
-    <h4>Article Title</h4>
-    <%= link_to "View Article", "" %>
-  </div>
-  <div class="article_box purple">
-    <%= image_tag('demo_article_image.png', :alt => "Demo Article Image") %>
-    <h4>Article Title</h4>
-    <%= link_to "View Article", "" %>
-  </div>
-  <div class="article_box brown">
-    <%= image_tag('demo_article_image.png', :alt => "Demo Article Image") %>
-    <h4>Article Title</h4>
-    <%= link_to "View Article", "" %>
-  </div>
+  <% @issue.standard_articles.each do |a| %>
+    <div class="article_box <%= a.color_box.color %>">
+      <div class="color_box_image_wrap">
+        <%= image_tag(a.article_image.url(:colorbox), :alt => a.title) %>
+      </div>
+      <h4><%= a.title %></h4>
+      <%= link_to "View Article", article_path(a) %>
+    </div>
+  <% end %>
 </div>
 
 <% content_for :javascripts do %>
+  <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#username=hcinsight"></script>
   <script type="text/javascript" charset="utf-8">
+  var addthis_config = {"data_track_clickback":true};
     $(document).ready(function() {
       form.customSelect();
     });

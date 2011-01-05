@@ -222,7 +222,7 @@ button {  width: auto; overflow: visible; }
 
 html, body {
   position: relative;
-  background: #fff;
+  background: #555;
   /*font-family: "Helvetica Neue", Arial, Helvetica, Tahoma, sans-serif;*/
   font-family: "HelveticaNeueLight", "HelveticaNeue-Light", "Helvetica Neue Light", "HelveticaNeue", "Helvetica Neue", 'TeXGyreHerosRegular', "Helvetica", "Myriad Pro","Tahoma", "Geneva", "Arial", sans-serif;
   font-weight:300;
@@ -242,6 +242,9 @@ html, body {
   text-align: left;
  	width: 1024px;
  	margin: 0px auto;
+ 	-moz-box-shadow: 0px 2px 5px #222;
+ 	-webkit-box-shadow: 0px 2px 5px #222;
+ 	box-shadow: 0px 2px 5px #222;
  	background-color: #4e4d4d;
  	background-image: url(../images/bg.png) left bottom;
  	background-repeat: repeat-x;
@@ -504,6 +507,67 @@ a#logo {
   -webkit-box-shadow: 0px 5px 10px #000;
   box-shadow: 0px 5px 10px #000;
 }
+.issue_banner img {
+  position: relative;
+  float: left;
+  margin-left: 30px;
+}
+.banner_content {
+  position: relative;
+  float: left;
+  width: 470px;
+  height: 370px;
+  padding-top: 30px;
+  padding-left: 30px;
+}
+.banner_content .main_sub_title {
+  padding: 10px 0px;
+}
+ul.banner_issue_links {
+  position: relative;
+  float: right;
+  padding: 10px;
+}
+ul.banner_issue_links li {
+  float: right;
+  padding: 0px 3px;
+}
+#app_link {
+  bottom: 35px;
+  height: 75px;
+  left: 65px;
+  position: absolute;
+  width: 65px;
+}
+#banner_article {
+  height: 230px;
+  margin-bottom: 20px;
+}
+#featured_articles img {
+  margin: 0px 5px 0px 0px;
+}
+#featured_articles, #banner_article {
+  position: relative;
+  float: left;
+}
+.banner_featured_article {
+  position: relative;
+  float: left;
+  width: 225px;
+  padding-right: 10px;
+}
+.banner_featured_article h3 {
+  font-size: 13px;
+}
+.banner_featured_article a {
+  bottom: 0;
+  display: block;
+  position: absolute;
+  right: 15px;
+}
+#app_link img {
+  margin: 0px;
+}
 /**********************************************************************************************************************************************/
 /***************************************************************************************************************** MAIN CONTENT ***************/
 #bd {
@@ -539,6 +603,8 @@ h3.articles_header {
 .article_box h4 {
   padding: 3px 10px;
   color: #fff;
+  float: left;
+  font-size: 13px;
 }
 .article_box a {
   position: absolute;
@@ -562,6 +628,17 @@ h3.articles_header {
 }
 .article_box.brown {
   background: #926d36;
+}
+.color_box_image_wrap {
+  position: relative;
+  float: left;
+  width: 154px;
+  height: 100px;
+  overflow: hidden;
+}
+.color_box_image_wrap img {
+  position: relative;
+  top: -25px;
 }
 .admin_issue_image {
   position: relative;
