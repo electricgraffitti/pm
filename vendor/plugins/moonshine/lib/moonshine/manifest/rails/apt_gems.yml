@@ -8,18 +8,18 @@ sqlite3-ruby:
 nokogiri:
 - libxml2-dev
 - libxslt1-dev
-rmagick:
-- imagemagick
-- libmagick9-dev
-paperclip:
-- imagemagick
-- libmagick9-dev
-thoughtbot-paperclip:
-- imagemagick
-- libmagick9-dev
-mini_magick:
-- imagemagick
-- libmagick9-dev
+# rmagick:
+# - imagemagick
+# - libmagick9-dev
+# paperclip:
+# - imagemagick
+# - libmagick9-dev
+# thoughtbot-paperclip:
+# - imagemagick
+# - libmagick9-dev
+# mini_magick:
+# - imagemagick
+# - libmagick9-dev
 postgres:
 - postgresql-client
 - postgresql-contrib
