@@ -60,21 +60,43 @@ var ajax = {
     var banner_content = $("#banner");
     var color_boxes = $("#article_boxes");
     
-    // selector.change(function() {
-    //   var data = $(this).val();
-    //   
-    //   banner_content.children().fadeOut();
-    //   color_boxes.children().fadeOut();
-    //   
-    //   banner_content.load('/index-banner', {id: data} );
-    //   color_boxes.load('/index-color-boxes', {id: data} );
-    //   
-    // });
+    selector.change(function() {
+
+      if(selector.val() === "") {
+        return
+      } else {
+        // Grab the Issue ID for ajax.load()
+        var data = $(this).val();
+        
+        // Fade out the existing content
+        banner_content.children().fadeOut();
+        color_boxes.children().fadeOut();
+        
+        // Load new content 
+        banner_content.load('/index-banner', {id: data}, function() {
+          addthis.toolbox(".addthis_toolbox");
+        }).hide().fadeIn();
+        color_boxes.load('/index-color-boxes', {id: data} ).hide().fadeIn();
+      }
+      
+
+      
+      
+    });
   }
   
 };
 
 var app = {
+  
+  shareLinks: function() {
+    var script = "http://s7.addthis.com/js/250/addthis_widget.js?username=hcinsight&domready=1",
+        addthis_config = {"data_track_clickback":true};
+    if (window.addthis){
+        window.addthis = null;
+    }
+    $.getScript(script);
+  }
   
 };
 

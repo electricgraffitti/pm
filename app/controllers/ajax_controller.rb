@@ -4,6 +4,7 @@ class AjaxController < ApplicationController
     @issue = Issue.find(params[:id])
     
     respond_to do |format|
+      format.html { render :layout => false }
       format.json { render :layout => false }
     end
   end
@@ -12,6 +13,7 @@ class AjaxController < ApplicationController
     @issue = Issue.find(params[:id])
     
     respond_to do |format|
+      format.html { render :layout => false }
       format.json { render :layout => false }
     end
   end

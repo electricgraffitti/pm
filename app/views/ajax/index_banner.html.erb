@@ -1,14 +1,14 @@
 <div class="issue_banner">
-  <%= image_tag(issue.issue_cover.url(:banner)) %>
+  <%= image_tag(@issue.issue_cover.url(:banner)) %>
   <div class="banner_content">
     <div id="banner_article">
-      <% issue.banner_articles.each do |ba| %>
+      <% @issue.banner_articles.each do |ba| %>
         <%= render :partial => 'pages/index_banner_article', :locals => {:ba => ba} %>
       <% end %>
     </div>
     <div id="featured_articles">
-      <% issue.featured_articles.each do |fa| %>
-        <%= render :partial => 'index_featured_article', :locals => {:fa => fa} %>
+      <% @issue.featured_articles.each do |fa| %>
+        <%= render :partial => 'pages/index_featured_article', :locals => {:fa => fa} %>
       <% end %>
     </div>
   </div>
