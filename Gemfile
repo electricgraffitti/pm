@@ -10,6 +10,7 @@ gem 'chargify_api_ares'
 gem 'rails-geocoder', :require => "geocoder"
 gem 'annotate'
 gem 'mail'
+gem 'shadow_puppet'
 
 group :development do
   gem 'rspec-rails'
