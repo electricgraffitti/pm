@@ -40,6 +40,9 @@
 # defaults, but this allows you to add to them. Please file an issue at
 # http://github.com/railsmachine/moonshine/issues if there are additional gem
 # dependencies Moonshine should know about.
+:apt_gems:
+  :paperclip:
+    
 :rubygems:
   :sources:
     - http://gemcutter.org
