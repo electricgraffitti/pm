@@ -78,10 +78,6 @@ var ajax = {
         }).hide().fadeIn();
         color_boxes.load('/index-color-boxes', {id: data} ).hide().fadeIn();
       }
-      
-
-      
-      
     });
   }
   

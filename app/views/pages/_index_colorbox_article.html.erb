@@ -3,5 +3,5 @@
     <%= image_tag(a.article_image.url(:colorbox), :alt => a.title) %>
   </div>
   <h4><%= a.title %></h4>
-  <%= link_to "View Article", article_path(a), :target => "_blank" %>
+  <%= link_to "View Article", article_url, :target => "_blank" %>
 </div>
