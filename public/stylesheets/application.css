@@ -341,6 +341,9 @@ h5 { font-weight: bold; font-size: 14px; line-height: 18px;}
 .brown {
   color: #926d36;
 }
+.light_grey {
+  color: #ccc;
+}
 .content_wrap {
   position: relative;
   float:left;
@@ -507,6 +510,9 @@ a#logo {
   -webkit-box-shadow: 0px 5px 10px #000;
   box-shadow: 0px 5px 10px #000;
 }
+.banner_content p {
+  padding: 10px 20px 0 0;
+}
 .issue_banner img {
   position: relative;
   float: left;
@@ -521,7 +527,7 @@ a#logo {
   padding-left: 30px;
 }
 .banner_content .main_sub_title {
-  padding: 10px 0px;
+  padding: 10px 0 0;
 }
 ul.banner_issue_links {
   position: relative;
@@ -539,11 +545,18 @@ ul.banner_issue_links li {
   position: absolute;
   width: 65px;
 }
+#content_app_link {
+  bottom: 85px;
+  height: 75px;
+  left: 27px;
+  position: absolute;
+  width: 65px;
+}
 #banner_article {
   height: 230px;
   margin-bottom: 20px;
 }
-#featured_articles img {
+#featured_articles a img {
   margin: 0px 5px 0px 0px;
 }
 #featured_articles, #banner_article {
@@ -559,13 +572,13 @@ ul.banner_issue_links li {
 .banner_featured_article h3 {
   font-size: 13px;
 }
-.banner_featured_article a {
+.banner_featured_article a.read_more_link {
   bottom: 0;
   display: block;
   position: absolute;
   right: 15px;
 }
-#app_link img {
+#app_link img, #content_app_link img {
   margin: 0px;
 }
 /**********************************************************************************************************************************************/
@@ -605,7 +618,7 @@ h3.articles_header {
   float: left;
   font-size: 13px;
 }
-.article_box a {
+.article_box a.view_article_link {
   position: absolute;
   bottom: 10px;
   left: 10px;
@@ -768,6 +781,35 @@ h3.articles_header {
 .issue_content ul li h6 {
   font-size: 12px;
 }
+/************************************************************/
+/************************************* Contact Us ***********/
+.contact_location {
+  position: relative;
+  float: left;
+  width: 268px;
+  padding: 20px;
+  text-align: center;
+  margin-top: 20px;
+}
+.banner_content h2.form_header {
+  font-family: 'Helvetica',"Arial","Arial Narrow";
+  font-size: 32px;
+  font-weight: bold;
+  padding: 20px 0;
+  position: relative;
+  width: 100%;
+}
+.contact_location h2 {
+  margin: 10px;
+  font-size: 20px;
+}
+.banner_content h4.content_header {
+  padding: 20px 0px 0px;
+}
+.contact_location p {
+  color: #999999;
+  line-height: 18px;
+}
 /**********************************************************************************************************************************************/
 /***************************************************************************************************************** BUTTONS ********************/
 .btn, .btn_small {
@@ -899,6 +941,22 @@ span.select {
 }
 span.select:hover {
   background:url(../images/profiler_custom_select.png) no-repeat 0 -27px;
+}
+.banner_content form {
+  position: relative;
+  float: left;
+}
+.banner_content form .visible_field {
+  position: relative;
+  float: left;
+  margin-bottom: 10px;
+  padding-right: 10px;
+}
+.banner_content form .visible_field input {
+  width: 211px;
+}
+.banner_content form .visible_field textarea {
+  width: 211px;
 }
 /**********************************************************************************************************************************************/
 /***************************************************************************************************************** FOOTER *********************/

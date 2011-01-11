@@ -1,0 +1,59 @@
+<% content_for :title do %>
+  Contact Us for more information on Profiler Magazine
+<% end %>
+
+<% content_for :banner do %>
+  <div class="issue_banner">
+    <%= link_to image_tag("iDevices.png", :alt => "Get the Profiler Magazine on you favorite iDevice"), "http://phobos.apple.com/WebObjects/MZStore.woa/wa/viewSoftware?id=402192354&mt=8?partnerId=30&siteID=KEmRFwU0WKY-hI28KvRKOGwR8BIz5W8B3A", :target => "_blank" %>
+    <div class="banner_content">
+      <h3 class="form_header">Thank You. We will get with you shortly.</h3>
+      <h4 class="content_header">Get Profiler Magazine on mobile devices.</h4>
+      <p>Do you want Profiler Magazine wherever, whenever? We have a Profiler Magazine App. From our very first issue, to our most current, The Profiler App provides all the fraud finder resources in one simple, easy-to-use application, free of charge.</p>
+      <p>Flip through the most current issue of Profiler Magazine or search the archives of all our past issues. Each are delivered in a brilliant, easy to read digital format. As you read through the issues, you’ll be able to adjust font sizes, bookmark your favorite pages, share comments with other readers and watch related videos and news updates on health care fraud. </p>
+      <div id="content_app_link">
+        <%= link_to image_tag("profiler_banner_icon.png"), "http://phobos.apple.com/WebObjects/MZStore.woa/wa/viewSoftware?id=402192354&mt=8?partnerId=30&siteID=KEmRFwU0WKY-hI28KvRKOGwR8BIz5W8B3A", :target => "_blank" %>
+        <%= link_to "Get the App", "http://phobos.apple.com/WebObjects/MZStore.woa/wa/viewSoftware?id=402192354&mt=8?partnerId=30&siteID=KEmRFwU0WKY-hI28KvRKOGwR8BIz5W8B3A", :target => "_blank" %>
+      </div>
+    </div>
+  </div>
+<% end %>
+
+<div id="article_boxes" class="clearfix">
+  <div class="contact_location">
+    <p class="light_grey">Profiler Magazine</p>
+    <h2 class="red">Operating Hours</h2>
+    <p>
+      7:00 A.M. - 6:00 P.M. (MST)<br/>
+      Monday - Friday<br/>
+      Toll Free - 877-619-5557<br/>
+    </p>
+  </div>
+  <div class="contact_location">
+    <p class="light_grey">Main Offices</p>
+    <h2 class="red">Salt Lake City</h2>
+    <p>
+      10897 S. River Front Parkway, Suite 200<br/>
+      South Jordan, Utah 84095<br/>
+      P 801-285-5800  F 801-285-5801<br/>
+    </p>
+  </div>
+  <div class="contact_location">
+    <p class="light_grey">Branch Offices</p>
+    <h2 class="red">St George</h2>
+    <p>
+      912 West 1600 South<br/>
+      St. George, Utah 84770<br/>
+      P 435-215-2280  F 435-215-2299<br/>
+    </p>
+  </div>
+</div>
+
+<% content_for :javascripts do %>
+  <script type="text/javascript" charset="utf-8">
+    $(document).ready(function() {
+      form.customSelect();
+      ajax.indexSelectTrigger();
+      app.shareLinks();
+    });
+  </script>
+<% end %>

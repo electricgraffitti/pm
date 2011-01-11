@@ -1,7 +1,7 @@
 <div class="banner_featured_article">
-  <%= image_tag(fa.article_image.url(:featured_thumb)) %>
+  <%= link_to image_tag(fa.article_image.url(:featured_thumb)), fa.article_url, :target => "_blank" %>
   <div class="red">Featured</div>
   <h3><%= fa.title %></h3>
   <div><%= fa.sub_title %></div>
-  <%= link_to "Read More", fa.article_url, :target => "_blank" %>
+  <%= link_to "Read More", fa.article_url, :target => "_blank", :class => "read_more_link" %>
 </div>

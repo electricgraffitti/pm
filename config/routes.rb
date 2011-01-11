@@ -1,9 +1,5 @@
 Profilermag::Application.routes.draw do
-
-  get "ajax/index_banner"
-
-  get "ajax/index_color_boxes"
-
+  
   resources :admin_sessions
   resources :admins
   resources :articles
@@ -16,6 +12,8 @@ Profilermag::Application.routes.draw do
   # Custom Paths
   match "admin-dashboard" => "pages#dashboard", :as => :dashboard
   match "admin-issue(/:id)" => "issues#admin_issue_show", :as => :admin_issue
+  match "contact-profiler-magazine" => "pages#contact_us", :as => :contact
+  match "thank-you" => "pages#thank_you", :as => :thank_you
   
   # Ajax Routes
   match "index-banner" => "ajax#index_banner", :as => :index_banner

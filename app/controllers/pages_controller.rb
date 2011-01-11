@@ -16,4 +16,18 @@ class PagesController < ApplicationController
     end
   end
   
+  def contact_us
+    
+    respond_to do |format|
+      format.html
+    end
+  end
+  
+  def thank_you
+    
+    respond_to do |format|
+      format.html
+    end
+  end
+  
 end
