@@ -1,7 +1,7 @@
 class PagesController < ApplicationController
   
   def index
-    @issue = Issue.first
+    @issue = Issue.last
     
     respond_to do |format|
       format.html
