@@ -13,6 +13,7 @@
 :domain_aliases:
   - www.profilermag.com
   - stage.profilermag.com
+  - profiler.cube2media.com
 
 :repository: git@github.com:electricgraffitti/pm.git
 :branch: master
