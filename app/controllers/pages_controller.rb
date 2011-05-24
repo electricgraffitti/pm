@@ -1,5 +1,8 @@
 class PagesController < ApplicationController
   
+  before_filter :require_admin, :only => [:dashboard]
+
+  
   def index
     @issue = Issue.last
     

@@ -5,6 +5,10 @@
     <%= f.text_field :title %>
   </div>
   <div class="field">
+		<%= f.check_box :active %>
+		<%= f.label :active, "Active Issue?" %><br />
+  </div>
+  <div class="field">
     <%= f.label :issue_cover, "Add Cover (img should be 420x370)" %><br />
     <%= f.file_field :issue_cover, :size => 16 %>
   </div>

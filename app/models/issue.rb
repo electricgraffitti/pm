@@ -10,7 +10,7 @@
 #  issue_cover_content_type :string(255)
 #  issue_cover_file_size    :integer(4)
 #  issue_cover_updated_at   :datetime
-#
+
 class Issue < ActiveRecord::Base
   
   # Associations
@@ -27,7 +27,7 @@ class Issue < ActiveRecord::Base
     :path => ":rails_root/public/issue_covers/:id/:style_:basename.:extension"
     
   # Scopes
-  
+  scope :active_issue, where("active = ?", true)
   # Methods
   
   def banner_articles

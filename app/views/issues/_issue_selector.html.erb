@@ -1,5 +1,5 @@
 <div id="issue_select">
   <%= form_tag("/issues", :method => :get) do %>
-    <%= select("issue", "id", Issue.all.collect {|i| [ i.title, i.id ] }, {:include_blank => "Select an Issue"}, {:class => "custom_select", :title => "Select an Issue"}) %>
+    <%= select("issue", "id", Issue.active_issue.collect {|i| [ i.title, i.id ] }, {:include_blank => "Select an Issue"}, {:class => "custom_select", :title => "Select an Issue"}) %>
   <% end %>
 </div>

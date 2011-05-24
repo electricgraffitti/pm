@@ -1,9 +1,3 @@
-require 'spec_helper'
-
-describe Article do
-  pending "add some examples to (or delete) #{__FILE__}"
-end
-
 # == Schema Information
 #
 # Table name: articles
@@ -21,5 +15,13 @@ end
 #  article_image_content_type :string(255)
 #  article_image_file_size    :integer(4)
 #  article_image_updated_at   :datetime
+#  sub_title                  :string(255)
+#  content                    :text
 #
+
+require 'spec_helper'
+
+describe Article do
+  pending "add some examples to (or delete) #{__FILE__}"
+end
 
