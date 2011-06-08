@@ -506,7 +506,7 @@ a#logo {
 #banner {
   position: relative;
   width: 1024px;
-  min-height: 400px;
+  min-height: 450px;
   background: #f1f1f1;
   -moz-box-shadow: 0px 5px 10px #000;
   -webkit-box-shadow: 0px 5px 10px #000;
@@ -519,6 +519,7 @@ a#logo {
   position: relative;
   float: left;
   margin-left: 30px;
+  margin-top: 40px;
 }
 .banner_content {
   position: relative;
@@ -564,6 +565,7 @@ ul.banner_issue_links li {
 #featured_articles, #banner_article {
   position: relative;
   float: left;
+  margin-top: 20px;
 }
 .banner_featured_article {
   position: relative;
@@ -986,7 +988,7 @@ footer {
 #linkback {
   float: right;
   height: 30px;
-  margin-right: 50px;
+  margin-right: 35px;
   margin-top: 14px;
   position: relative;
   width: 185px;
