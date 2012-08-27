@@ -15,6 +15,7 @@ Profilermag::Application.routes.draw do
   match "contact-profiler-magazine" => "pages#contact_us", :as => :contact
   match "thank-you" => "pages#thank_you", :as => :thank_you
   match "91busted" => "pages#busted", :as => :busted
+  match "subscribe" => "pages#subscribe", :as => :subscribe
   
   # Ajax Routes
   match "index-banner" => "ajax#index_banner", :as => :index_banner

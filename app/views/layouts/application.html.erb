@@ -12,12 +12,22 @@
   <div id="wrapper" class="clearfix">
     <%= render :partial => 'layouts/flash', :locals => {:flash => flash} %>
 	  <header class="clearfix">
-      <%= render :partial => "layouts/header" %>
+	    <% if  @subscribe == "subscription_page" %>
+	      <%= render :partial => "layouts/subscribe_header" %>
+	    <% else %>
+        <%= render :partial => "layouts/header" %>
+      <% end %>
 	  </header>
     <div id="bd" class="clearfix">
+      <% if @subscribe == "subscription_page" %>
+      <div id="subscribe_banner">
+        <%= yield :banner %>
+      </div>
+      <% else %>
       <div id="banner" class="clearfix">
         <%= yield :banner %>
       </div>
+      <% end %>
       <div class="main_content" class="clearfix">
         <%= yield %>
       </div>

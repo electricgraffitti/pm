@@ -37,4 +37,8 @@ class PagesController < ApplicationController
     redirect_to "http://www2.hcinsight.com/91-busted"
   end
   
+  def subscribe
+    @subscribe = "subscription_page"
+  end
+  
 end

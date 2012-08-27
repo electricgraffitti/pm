@@ -576,6 +576,8 @@ ul.banner_issue_links li {
 }
 .banner_featured_article h3 {
   font-size: 13px;
+	line-height: 12px;
+	margin-bottom: 3px;
 }
 .banner_featured_article a.read_more_link {
   bottom: 0;
@@ -804,6 +806,15 @@ h3.articles_header {
   position: relative;
   width: 100%;
 }
+.issue_banner h2.subscription_header {
+  font-family: 'Helvetica',"Arial","Arial Narrow";
+  font-size: 32px;
+  font-weight: bold;
+  padding: 20px 0;
+  position: relative;
+  width: 100%;
+	text-align: center;
+}
 .contact_location h2 {
   margin: 10px;
   font-size: 20px;
@@ -814,6 +825,121 @@ h3.articles_header {
 .contact_location p {
   color: #999999;
   line-height: 18px;
+}
+ul#bullets {
+	position: relative;
+	float: left;
+	margin: 0px 0px 20px 0px;
+}
+ul#bullets li {
+	float: left;
+	font-size: 20px;
+	font-weight: bold;
+	height: 23px;
+	margin-bottom: 5px;
+	padding-top: 3px;
+	position: relative;
+	width: 100%;
+}
+ul#bullets li span.bullet {
+	display: block;
+	float: left;
+	height: 33px;
+	margin-right: 10px;
+	margin-top: -3px;
+	position: relative;
+	width: 34px;
+	background: url("../images/subscribe_bullet.png") no-repeat;
+}
+h3.subscription_form {
+	font-weight: bold;
+	padding-left: 105px;
+	color: #E76E34;
+	font-size: 1.5em;
+	line-height: 1;
+	margin-bottom: 1em;
+	float: left;
+	width: 345px;
+}
+.banner_content form label {
+	color: #E76E34;
+	font-weight: 700;
+	line-height: 20px;
+}
+.banner_content p.form {
+	font-weight: 500;
+	margin-top: 50px;
+	float: left;
+	padding: 0px;
+}
+#subscribe_banner {
+	position: relative;
+	width: 1024px;
+	height: 650px;
+	background: #F1F1F1;
+	-moz-box-shadow: 0px 5px 10px #000;
+	-webkit-box-shadow: 0px 5px 10px black;
+	box-shadow: 0px 5px 10px black;
+}
+.subscription_banner {
+	position: relative;
+	float: left;
+	height: 650px;
+	width: 100%;
+}
+.subscription_banner h5.quote {
+	float: left;
+	font-size: 16px;
+	font-weight: 100;s
+	margin-bottom: 10px;
+	padding-top: 65px;
+	position: relative;
+	width: 250px;
+	text-align: center;
+	margin-right: 160px;
+
+}
+.subscription_banner h5.quote span {
+	font-weight: bold;
+}
+div.content_left {
+	float: left;
+	min-height: 440px;
+	position: relative;
+	width: 500px;
+}
+div.content_right {
+	float: left;
+	min-height: 440px;
+	position: relative;
+	width: 500px;
+}
+.content_left h5 {
+	margin-left: 60px;
+}
+.content_left p {
+	color: #E76E34;
+	font-weight: bold;
+	text-align: right;
+/*	float: left;*/
+	width: 300px;
+	margin-top: 10px;
+	font-size: 11px;
+}
+.content_right p {
+	position: relative;
+/*	float: left;*/
+	font-weight: 600;
+	padding-right: 0px;
+}
+.issue_banner img.app {
+	margin: 0px;
+	position: absolute;
+	top: 355px;
+	left: 240px;
+}
+.content_left a {
+/*	float: left;*/
 }
 /**********************************************************************************************************************************************/
 /***************************************************************************************************************** BUTTONS ********************/
@@ -838,6 +964,11 @@ h3.articles_header {
      -moz-box-shadow: 0px 1px 2px #444; 
   -webkit-box-shadow: 0px 1px 2px #444; 
           box-shadow: 0px 1px 2px #444;
+}
+.issue_banner .submit_btn {
+	margin-top: 5px;
+	margin-left: 3px;
+	width: 213px;
 }
 .btn_small {
   width: 112px;
