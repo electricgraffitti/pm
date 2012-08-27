@@ -92,7 +92,28 @@ var app = {
         window.addthis = null;
     }
     $.getScript(script);
-  }
+  },
+
+	setTips: function() {
+	  $('.visible_field').tipTip({
+	    defaultPosition: 'top'
+	  });
+	},
+	
+	formValidation: function() {
+	  $('#pf')
+	    .bind('formIsValid', function(event, form) {
+        //do whatever when the form is valid
+        //form - the form that is valid (jQuery Object)
+        app.launchFormThankYouModal();
+      })
+      .ketchup();
+	},
+	
+	loadCoreFunctions: function() {
+    app.setTips();
+		app.formValidation();
+	},
   
 };
 

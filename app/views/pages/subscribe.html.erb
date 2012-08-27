@@ -29,43 +29,43 @@
           </li>
         </ul>
         <h3 class="subscription_form">Enjoy Your Subscription</h3>
-        <%= form_tag("http://success.veriskhealth.com/acton/eform/2131/004f/d-ext-0001", :method => "post", :id => "profiler_form") do %>
+        <%= form_tag("http://success.veriskhealth.com/acton/eform/2131/004f/d-ext-0001", :method => "post", :id => "pf") do %>
       
           <div class="visible_field">
             <%= label :profiler, :business_name, "Company *" %><br />
-            <%= text_field :profiler, :business_name, :name => "Company" %>
+            <%= text_field :profiler, :business_name, :name => "Company", :class => "validate(required)" %>
           </div>
           <div class="visible_field">
             <%= label :profiler, :profiler_title, "Job Title *" %><br />
-            <%= text_field :profiler, :job_title, :name => "Job Title" %>
+            <%= text_field :profiler, :job_title, :name => "Job Title", :class => "validate(required)" %>
           </div>
           <div class="visible_field">
             <%= label :profiler, :profiler_email, "Email Address *" %><br />
-            <%= text_field :profiler, :profiler_email, :name => "E-mail Address" %>
+            <%= text_field :profiler, :profiler_email, :name => "E-mail Address", :class => "validate(required, email)" %>
           </div>
           <div class="visible_field">
             <%= label :profiler, :profiler_first_name, "First Name *" %><br />
-            <%= text_field :profiler, :profiler_first_name, :name => "First Name" %>
+            <%= text_field :profiler, :profiler_first_name, :name => "First Name", :class => "validate(required)" %>
           </div>
           <div class="visible_field">
             <%= label :profiler, :profiler_last_name, "Last Name *" %><br />
-            <%= text_field :profiler, :profiler_last_name, :name => "Last Name" %>
+            <%= text_field :profiler, :profiler_last_name, :name => "Last Name", :class => "validate(required)" %>
           </div>
           <div class="visible_field">
             <%= label :profiler, :address, "Address *" %><br />
-            <%= text_field :profiler, :address, :name => "Business Street" %>
+            <%= text_field :profiler, :address, :name => "Business Street", :class => "validate(required)" %>
           </div>
           <div class="visible_field">
             <%= label :profiler, :city, "City *" %><br />
-            <%= text_field :profiler, :city, :name => "Business City" %>
+            <%= text_field :profiler, :city, :name => "Business City", :class => "validate(required)" %>
           </div>
           <div class="visible_field">
             <%= label :profiler, :state, "State *" %><br />
-            <%= text_field :profiler, :state, :name => "Business State" %>
+            <%= text_field :profiler, :state, :name => "Business State" , :class => "validate(required)"%>
           </div>
           <div class="visible_field">
             <%= label :profiler, :zipcode, "Zipcode *" %><br />
-            <%= text_field :profiler, :zipcode, :name => "Business Postal Code" %>
+            <%= text_field :profiler, :zipcode, :name => "Business Postal Code", :class => "validate(required)" %>
           </div>
           <%= submit_tag 'Subscribe', :class => "btn_small submit_btn", :title => "Submit Your Message to Verisk Health" %>
         <% end %>
@@ -113,6 +113,7 @@
       form.customSelect();
       ajax.indexSelectTrigger();
       app.shareLinks();
+      app.loadCoreFunctions();
     });
   </script>
 <% end %>
