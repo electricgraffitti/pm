@@ -7,26 +7,26 @@
     <%= image_tag("issue_covers.png", :alt => "Profiler Magazine") %>
     <div class="banner_content">
       <h2 class="form_header">We want to hear from you.</h2>
-      <%= form_tag("http://success.veriskhealth.com/acton/eform/2131/004e/d-ext-0001", :method => "post", :id => "profiler_form") do %>
+      <%= form_tag("http://success.veriskhealth.com/acton/eform/2131/004e/d-ext-0001", :method => "post", :id => "pf") do %>
         <div class="visible_field">
           <%= label :profiler, :profiler_first_name, "First Name *" %><br />
-          <%= text_field :profiler, :profiler_first_name, :name => "First Name" %>
+          <%= text_field :profiler, :profiler_first_name, :name => "First Name", :class => "validate(required)" %>
         </div>
         <div class="visible_field">
           <%= label :profiler, :profiler_last_name, "Last Name *" %><br />
-          <%= text_field :profiler, :profiler_last_name, :name => "Last Name" %>
+          <%= text_field :profiler, :profiler_last_name, :name => "Last Name", :class => "validate(required)" %>
         </div>
         <div class="visible_field">
           <%= label :profiler, :profiler_email, "Email Address *" %><br />
-          <%= text_field :profiler, :profiler_email, :name => "E-mail Address" %>
+          <%= text_field :profiler, :profiler_email, :name => "E-mail Address", :class => "validate(required, email)" %>
         </div>
         <div class="visible_field">
           <%= label :profiler, :business_name, "Company *" %><br />
-          <%= text_field :profiler, :business_name, :name => "Company" %>
+          <%= text_field :profiler, :business_name, :name => "Company", :class => "validate(required)" %>
         </div>
         <div class="visible_field">
           <%= label :profiler, :comment, "Comments" %><br />
-          <%= text_area :profiler, :comment, :name => "description", :rows => 3, :cols => 28   %>
+          <%= text_area :profiler, :comment, :name => "Description", :rows => 3, :cols => 28   %>
         </div>
         <div class="clearfix"></div>
         <%= submit_tag 'Submit', :class => "btn_small", :title => "Submit Your Message to Verisk Health" %>
@@ -71,6 +71,7 @@
       form.customSelect();
       ajax.indexSelectTrigger();
       app.shareLinks();
+      app.loadCoreFunctions();
     });
   </script>
 <% end %>
